@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri Selectif</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Tri Sélectif</h1>
+    </header>
+    <main>
+        <h2>Placez les déchets dans les poubelles adaptées.</h2>
+        <section id="score-panel">
+            <p><i id="score">0</i> / 10</p>
+            <p id="commentaire">Réfléchissez bien!</p>
+            <button id="restart" disabled>Recommencer</button>
+        </section>
+        <section id="trashbin">
+            <img src="assets/trash-blue.png" alt="poubelle bleu" class="trashbin" data-bin="blue">
+            <img src="assets/trash-green.png" alt="poubelle verte" class="trashbin" data-bin="green">
+            <img src="assets/trash-yellow.png" alt="poubelle jaune" class="trashbin" data-bin="yellow">
+            <img src="assets/trash-brown.png" alt="poubelle marron" class="trashbin" data-bin="brown">
+        </section>
+        <section id="trash">
+            <img src="" alt="déchet" class="trash">
+            <img src="" alt="déchet" class="trash">
+            <img src="" alt="déchet" class="trash">
+            <img src="" alt="déchet" class="trash">
+            <img src="" alt="déchet" class="trash">
+            <img src="" alt="déchet" class="trash">
+            <img src="" alt="déchet" class="trash">
+            <img src="" alt="déchet" class="trash">
+            <img src="" alt="déchet" class="trash">
+            <img src="" alt="déchet" class="trash">
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

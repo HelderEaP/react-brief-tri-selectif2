@@ -1,0 +1,64 @@
+:root{
+    --PRIMARY-COLOR : #106900;
+    --SECONDARY-COLOR-1: #070069;
+    --SECONDARY-COLOR-2: #692700;
+    --SECONDARY-COLOR-3: #52BE3F;
+    --SECONDARY-COLOR-4: #E8A074;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Lato";
+    font-size: 14px;
+    color: white;
+}
+html{
+    background-color: var(--PRIMARY-COLOR);
+}
+header{
+    text-align: center;
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2rem;
+    text-align: center;
+}
+p{
+    font-size: 1.5rem;
+    text-align: center;
+}
+#score{
+    font-size: 1.5rem;
+}
+#score-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+#trashbin {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 50px;
+}
+#trash{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 80%;
+    margin: 50px auto 0 auto;
+    flex-wrap: wrap;
+}
+.trash{
+    height: 150px;
+}
+#restart{
+    padding-right: 10px;
+    width: 100px;
+    color: black;
+    font-weight: bold;
+}
