@@ -42,7 +42,7 @@ p{
 #trashbin {
     display: flex;
     justify-content: center;
-    gap: 90px;
+    gap: 5%;
     margin-top: 50px;
 }
 #trash{
@@ -58,7 +58,41 @@ p{
 }
 #restart{
     padding-right: 10px;
-    width: 100px;
+    padding-left: 10px;
+    width: max-content;
     color: black;
     font-weight: bold;
+}
+/*############################*/
+/*###     MEDIA QUERIES    ###*/
+/*############################*/
+@media screen and (max-width: 969px) {
+    h2{
+        font-size: 1.2rem;
+    }
+    #commentaire{
+        font-size: 1rem;
+    }
+    .trashbin{
+        width: 140px;
+    }
+    #trashbin{
+        flex-wrap: wrap;
+    }
+    img[alt="poubelle bleu"]{
+        content: url(assets/trash-little-blue.png)
+    }
+    img[alt="poubelle verte"]{
+        content: url(assets/trash-little-green.png)
+    }
+    img[alt="poubelle jaune"]{
+        content: url(assets/trash-little-yellow.png)
+    }
+    img[alt="poubelle marron"]{
+        content: url(assets/trash-little-brown.png)
+    }
+    .trash{
+        height: 75px;
+    }
+    
 }

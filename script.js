@@ -210,10 +210,10 @@ class Recyclage {
         restartBtn.disabled = true;
         this.trashLeft = 10;
         score.innerText = this.score;
-        console.log(this)
         for(let i = 0; i < 10; i++) {
             document.getElementById('trash').innerHTML +=`<img src="" alt="déchet" class="trash">`;
         }
+        this.trashArray = document.getElementsByClassName('trash');
         this.displayTrash();
     }
 }
@@ -228,12 +228,14 @@ let recycle = new Recyclage(
 
 // FONCTIONS GLOBALES //
 function dragHandler(e) {
-    console.log(e)
     recycle.trashDragged = e.dataset.trash;
     recycle.trashToDelete = e;
+    document.body.append(recycle.trashToDelete);
+    recycle.trashToDelete.style.display = 'none';
 }
 function dropHandler(e) {
     recycle.binDroped = e.dataset.bin;
+    dragleaveHandler(e);
     recycle.controlTrash();
 }
 function dragoverHandler(e) {
@@ -242,6 +244,9 @@ function dragoverHandler(e) {
 function dragleaveHandler(e) {
     e.style.transform = "scale(1)"
 }
+function dragendHandler() {
+    recycle.trashToDelete.style.display = "block";
+}
 // INITIALISATION //
 recycle.displayTrash();
 
@@ -249,8 +254,12 @@ window.addEventListener("DOMContentLoaded", () => {
     for(let trashElt of document.getElementsByClassName('trash')) {
         trashElt.addEventListener("drag", (e) => {
             e.preventDefault();
-            recycle.displayInfoTrash(trashElt.dataset.trash)
+            recycle.displayInfoTrash(trashElt.dataset.trash);
             dragHandler(trashElt);
+        })
+        trashElt.addEventListener('dragend', (e) => {
+            e.preventDefault();
+            dragendHandler();
         })
     }
     for(let bin of document.getElementsByClassName('trashbin')) {
@@ -269,5 +278,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 })
 restartBtn.addEventListener('click', () => {
-    recycle.restartGame();
+    //recycle.restartGame();
+    location.reload();
 })
